@@ -8,7 +8,7 @@ Linux ist openSource (also frei verfügbar) und kann von jedem genutzt werden (a
 - **/bin** *binaries -> Binärdateien/Programme*
 - **/dev** *devices -> Gerätedateien zur Ansteuerung von Hardware*
 - **/etc** *et cetera / edit to configure -> Konfigurationsdateien*
-- **/home** *Heimatverzeichnisse der Nutzer**
+- **/home** *Heimatverzeichnisse der Nutzer*
 - **/lib** *libraries -> Funktionsbibliothek (Bibliotheken, die bei Systemstart benötigt werden)*
 - **/opt** *optional -> alle Programme, die nicht iin Paketformat vorliegen*
 - **/run** *beherbergt Dateien von laufenden Prozessen*
