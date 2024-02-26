@@ -10,19 +10,19 @@
 
 &: (am Ende eines Befehls) führt Befehl im Hintergrund aus 
 
-### Hilfe
+## Hilfe
 man {Befehlsname}: öffnet manual von Befehle
 
 apropos {Stichwort}: dursucht Hilfeseiten nach Stichwort
 
 which {Befehl}: findet den Ort eines installierten Programmes
 
-### systemspezifisch
+## systemspezifisch
 reboot: startet System neu
 
 halt: schaltet System ab
 
-### verzeichnisrelevant
+## verzeichnisrelevant
 pwd: zeigt aktuelles Verzeichnis
 
 cd {Zielverzeichnis}: ändert Verzeichnis
@@ -35,7 +35,7 @@ ls {Verzeichnisname}: listet Verzeichnisinhalt auf
 
 find: sucht Dateien innerhalb eines Verzeichnisses inkl. Unterverzeichnis
 
-### dateirelevant
+## dateirelevant
 cp: kopiert Dateien/Verzeichnisse (bei Verzeichnissen: cp -R)
 
 rm: löscht Dateien/Verzeichnisse
@@ -50,18 +50,18 @@ wc: zählt Wörter oder Linien eines Datei-Inhaltes
 
 echo: gibt Zeichenkette aus
 
-### Aliase
+## Aliase
 alias: nutzerspezifisches Kürzel für einen Befehl oder eine Befehlskombination
 
 alias {aliasname}="{befehl mit params/args}"
 
-### Wildcards und Brace extension
+## Wildcards und Brace extension
 *: steht für beliebig viele Zeichen (bsp: ls *.txt)
 ?: steht für ein beliebiges Zeichen (bsp: ls file?.txt)
 { , }: erzeugt im Beispiel File1.txt, File2.txt und File3.txt (bsp: touch File{1,2,3}.txt)
 { .. }: erzeugt einen Bereich (bsp: touch file{1..9}.txt)
 
-### Tilde expansion
+## Tilde expansion
 cd ~: Heimverzeichnis des akt. Benutzers (oder $HOME)
 
 cd ~myname: Heimverzeichnis Benutzer: ~BENUTZERNAME
@@ -70,7 +70,7 @@ cd ~myname: Heimverzeichnis Benutzer: ~BENUTZERNAME
 
 cd ~-: zuvor besuchtes Verzeichnis (oder "cd -" oder $OLDPWD)
 
-## Shellprogrammierung
+# Shellprogrammierung
 Bash-Script erstellen:
 - leere Datei erstellen (touch meinscript.sh)
 - mit Texteditor bearbeiten (nano meinscript.sh)
@@ -79,7 +79,7 @@ Bash-Script erstellen:
 - Script ausführen (./meinscript.sh)
 
 
-### Variablen
+## Variablen
 - Variablenname darf niemals mit einer Zahl beginnen!
 - wird mit dem Zuweisungsoperator = gesetzt. (Ohne Leerzeichen!)
 - Auf den Inhalt von Variablen kann mit einem vorangestellten $ zugegriffen werden.
@@ -94,7 +94,7 @@ var=$(( Int-Arithmetik ))
 
 var=$[ Int-Arithmetik ]
 
-### Zeichenketten Verarbeitung (Strings)
+## Zeichenketten Verarbeitung (Strings)
 String-Länge: echo ${#STRING} ($STRING ist eine Variable)
 
 expr index "$STRING" "$SUBSTRING": sucht, an welcher Position der $SUBSTRING von $STRING ist
@@ -103,11 +103,93 @@ echo ${STRING:$POS:$LEN}: Extrahiere einen Substring der Länge $LEN von $POS au
 
 echo ${STRING[@]/sein/essen}: Ersetze das erste Vorkommen des Substrings ("sein" wird mit "essen" ersetzt)
 
-### Text Processing Tools
+## Text Processing Tools
 grep {options} pattern {files}: gibt alle Linien aus, welche einem Muster entsprechen
 
 cut {option} {datei}: extrahiert spaltenweise Ausschnitte aus Textzeilen
 
-Alle Zeilen, welche nicht gamma enthalten: grep -v "gamma" uebung4.txt
+grep: Alle Zeilen, welche nicht gamma enthalten: grep -v "gamma" uebung4.txt
 
 Alle Zeilen, welche 1, 2 oder 3 enthalten (benutzen Sie -E und eine regex): grep --color=auto -E "1|2|3" uebung4.txt
+
+cut: Alle Begriffe vor dem ersten :-Zeichen: cut -d ':' -f  1 uebung4.txt
+
+Alle Begriffe zwischen den beiden :-Zeichen: cut -d ':' -f  2 uebung4.txt
+
+## Arrays
+Array erstellen Beispiel: my_array=(apfel banane "Frucht Korb" orange)
+
+Anzahl Elemente im Array: echo  ${#my_array[@]}       
+
+## Shell Funktionen
+Grundlegendes Konstrukt: 
+function_name {
+  Befehle...
+}
+
+## Parameterübergabe beim Aufruf eines Scripts
+Argumente können einem Skript übergeben werden, wenn es ausgeführt wird. Man schreibt sie, mit Leerzeichen getrennt, nach dem Skriptnamen.
+
+In dem Skript kann das erste Argument mit der Variable $1 referenziert werden, das Zweite mit $2, etc.
+
+## Entscheidungen (If, Case)
+grundlegendes Konstrukt: if  [ ausdruck ]; then
+
+Beispiel If:
+
+NAME="George"
+
+if [ "$NAME" = "John" ]; then
+  echo "John Lennon"
+  
+elif [ "$NAME" = "George" ]; then
+
+  echo "George Harrison"
+  
+else
+
+  echo "Somit bleiben uns Paul und Ringo."
+  
+fi
+
+
+Beispiel Case:
+
+mycase=1
+
+case $mycase in
+
+  1) echo "Sie haben Bash gewählt.";;
+    
+  2) echo "Sie haben Perl gewählt.";;
+    
+  3) echo "Sie haben Python gewählt.";;
+    
+  4) echo "Sie haben C++ gewählt.";;
+    
+  5) exit
+    
+esac
+
+## Schleifen
+
+**grundlegendes Konstrukt for-Schleife**
+
+for argument in [list]
+
+do
+
+  Befehle...
+  
+done
+
+
+**grundlegendes Konstukt while-Schleife**
+
+while [ Bedingung ]
+
+do
+
+  Befehle...
+  
+done
