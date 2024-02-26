@@ -193,3 +193,28 @@ do
   Befehle...
   
 done
+
+
+## Informationskanäle
+
+stdin - Standardeingabekanal (0) 
+
+(z.B. sie geben Zeichen über die Tastatur ein)
+
+
+stdout - Standardausgabekanal (1) 
+
+(z.B. ein Programm zeigt den Inhalt eines Verzeichnisses am
+Bildschirm an)
+
+
+sterr - Standardfehlerausgabekanal (2) 
+
+(z.B. ein Programm erzeugt einen Fehler und zeigt diesen am
+Bildschirm an)
+
+
+">>" hängt Inhalt an bestehende Datei an, ">" überschreibt den Inhalt
+komplett mit Neuem (bsp: ls -la > liste.txt)
+
+
