@@ -36,7 +36,7 @@ ls {Verzeichnisname}: listet Verzeichnisinhalt auf
 find: sucht Dateien innerhalb eines Verzeichnisses inkl. Unterverzeichnis
 
 ### dateirelevant
-cp: kopiert Dateien/Verzeichnisse
+cp: kopiert Dateien/Verzeichnisse (bei Verzeichnissen: cp -R)
 
 rm: löscht Dateien/Verzeichnisse
 
@@ -54,3 +54,18 @@ echo: gibt Zeichenkette aus
 alias: nutzerspezifisches Kürzel für einen Befehl oder eine Befehlskombination
 
 alias {aliasname}="{befehl mit params/args}"
+
+### Wildcards und Brace extension
+*: steht für beliebig viele Zeichen (bsp: ls *.txt)
+?: steht für ein beliebiges Zeichen (bsp: ls file?.txt)
+{ , }: erzeugt im Beispiel File1.txt, File2.txt und File3.txt (bsp: touch File{1,2,3}.txt)
+{ .. }: erzeugt einen Bereich (bsp: touch file{1..9}.txt)
+
+### Tilde expansion
+cd ~: Heimverzeichnis des akt. Benutzers (oder $HOME)
+
+cd ~myname: Heimverzeichnis Benutzer: ~BENUTZERNAME
+
+~+: akt. Arbeitsverzeichnis (pwd) (oder $PWD)
+
+cd ~-: zuvor besuchtes Verzeichnis (oder $OLDPWD)
