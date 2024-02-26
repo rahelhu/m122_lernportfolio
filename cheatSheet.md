@@ -68,4 +68,46 @@ cd ~myname: Heimverzeichnis Benutzer: ~BENUTZERNAME
 
 ~+: akt. Arbeitsverzeichnis (pwd) (oder $PWD)
 
-cd ~-: zuvor besuchtes Verzeichnis (oder $OLDPWD)
+cd ~-: zuvor besuchtes Verzeichnis (oder "cd -" oder $OLDPWD)
+
+## Shellprogrammierung
+Bash-Script erstellen:
+- leere Datei erstellen (touch meinscript.sh)
+- mit Texteditor bearbeiten (nano meinscript.sh)
+- im Script mit "#!/bin/bash" festlegen, dass das Script mit Bash ausgeführt werden soll
+- Script ausführbar machen (sudo chmod +x meinscript.sh)
+- Script ausführen (./meinscript.sh)
+
+
+### Variablen
+- Variablenname darf niemals mit einer Zahl beginnen!
+- wird mit dem Zuweisungsoperator = gesetzt. (Ohne Leerzeichen!)
+- Auf den Inhalt von Variablen kann mit einem vorangestellten $ zugegriffen werden.
+- Variablenname ist case-sensitiv
+- Ein auszuwertender Ausdruck muss in $( ) gesetzt werden
+- Eine Variable kann mit dem readonly-Befehl als Konstante gesetzt werden
+
+
+Es gibt in der Bash mind. zwei grundsätzliche Varianten, um einen arithmetischen Ausdruck zu berechnen:
+
+var=$(( Int-Arithmetik ))
+
+var=$[ Int-Arithmetik ]
+
+### Zeichenketten Verarbeitung (Strings)
+String-Länge: echo ${#STRING} ($STRING ist eine Variable)
+
+expr index "$STRING" "$SUBSTRING": sucht, an welcher Position der $SUBSTRING von $STRING ist
+
+echo ${STRING:$POS:$LEN}: Extrahiere einen Substring der Länge $LEN von $POS ausgehend aus $STRING.
+
+echo ${STRING[@]/sein/essen}: Ersetze das erste Vorkommen des Substrings ("sein" wird mit "essen" ersetzt)
+
+### Text Processing Tools
+grep {options} pattern {files}: gibt alle Linien aus, welche einem Muster entsprechen
+
+cut {option} {datei}: extrahiert spaltenweise Ausschnitte aus Textzeilen
+
+Alle Zeilen, welche nicht gamma enthalten: grep -v "gamma" uebung4.txt
+
+Alle Zeilen, welche 1, 2 oder 3 enthalten (benutzen Sie -E und eine regex): grep --color=auto -E "1|2|3" uebung4.txt
