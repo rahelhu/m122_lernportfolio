@@ -24,7 +24,7 @@ alle Zeichen ausser Whitespace: /S
 
 Alternativen: | (Beispiel: (asdf|ASDF))
 
-## Grep
+## GREP
 sucht nach einem Muster und gibt die passenden Zeilen aus.
 
 **Varianten:**
@@ -53,9 +53,28 @@ grep muster datei1 [datei2] ... [datein]
 | \>      | Ende eines Wortes      | `wort\>`        | Findet alle Zeilen, welche mit »wort« enden (bspw. »Vorwort« oder »Nachwort«, nicht aber »wort« oder »wortreich«). |
 | \<\>    | ein Wort               | `\<wort\>`      | Findet exakt »wort« und nicht »Nachwort« oder »wortreich«.                          |
 
+## CUT
+CUT wird gebraucht, wenn man aus einer Datei oder der Ausgabe eines Befehles verschiedene Datenfelder extrahieren/herausschneiden muss.
+
+**Syntax:**
+cut -option datei
+
+**Beispiele:**
+you@host > cut -c5 gedicht.txt
+
+So würden Sie aus der Textdatei gedicht.txt jeweils aus jeder Zeile das fünfte Zeichen extrahieren. Die Option –c steht für character (also Zeichen). Wollen Sie hingegen aus jeder Zeile einer Datei ab dem fünften Zeichen bis zum Zeilenende alles extrahieren, dann wird cut wie folgt verwendet:
+
+you@host > cut -c5- gedicht.txt
+
+you@host > cut -c1,3,5,6,7–12,14 gedicht.txt
+
+Hiermit würden Sie das erste, dritte, fünfte, sechste, siebte bis zwölfte und das vierzehnte Zeichen aus jeder Zeile extrahieren.
 
 
-## Sed
+
+
+
+## SED
 Es ermöglicht die Manipulation von Textdateien durch das Ersetzen, Einfügen und Löschen von Text mit Hilfe von regulären Ausdrücken 2.
 
 **Syntax:**
