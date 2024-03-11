@@ -166,3 +166,10 @@ auszuführender Befehl
 │ └────────── Stunde (0-23)
 
 └──────────── Minute (0-59)
+
+
+*= Ausführung immer (zu jeder…)
+  
+*/n = Ausführung aller n
+
+n,x,y = Ausführung um/am n, x und y
