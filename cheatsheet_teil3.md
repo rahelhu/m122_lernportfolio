@@ -53,6 +53,10 @@ grep muster datei1 [datei2] ... [datein]
 | \>      | Ende eines Wortes      | `wort\>`        | Findet alle Zeilen, welche mit »wort« enden (bspw. »Vorwort« oder »Nachwort«, nicht aber »wort« oder »wortreich«). |
 | \<\>    | ein Wort               | `\<wort\>`      | Findet exakt »wort« und nicht »Nachwort« oder »wortreich«.                          |
 
+
+Option -c = count -> gibt die Anzahl an Zeilen an, welche dieses Muster enthalten.
+
+
 ## CUT
 CUT wird gebraucht, wenn man aus einer Datei oder der Ausgabe eines Befehles verschiedene Datenfelder extrahieren/herausschneiden muss.
 
