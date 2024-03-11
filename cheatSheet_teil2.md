@@ -173,3 +173,9 @@ auszuführender Befehl
 */n = Ausführung aller n
 
 n,x,y = Ausführung um/am n, x und y
+
+Beispiel:
+
+0 10 1 * * 
+
+An jedem 1.Tag im Monat um 10:00 Uhr
