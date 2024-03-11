@@ -84,3 +84,8 @@ sed [-option] 'Kommando' [Datei] ... [Datei_n]
 Wenn Sie mehrere Dateien auf einmal mit sed bearbeiten wollen bzw. müssen, kann es sinnvoll sein, anstatt eines Kommandos eine Kommandodatei zu verwenden – man darf hierzu gern auch sed-Script sagen. Der Vorteil: Diese Kommandodatei können Sie jederzeit wieder verwenden. Also, statt eine Datei wie folgt mit sed zu bearbeiten
 
 sed -n 'kommando ; kommando; kommando' Datei > Zieldatei
+
+
+
+## ifconfig
+Der Befehl ifconfig gibt Ihnen die Möglichkeit, Netzwerkschnittstellen zu konfigurieren. Natürlich können Sie mit diesem Tool auch Informationen über Netzwerkschnittstellen abrufen. 
