@@ -148,3 +148,21 @@ komplett mit Neuem (bsp: ls -la > liste.txt)
 
 2>: füllt die Fehlermeldungen in eine Datei
 1>: füllt die Ausgabe in eine Datei
+
+
+## Cronjobs
+auszuführender Befehl
+
+┬ ┬ ┬ ┬ ┬     
+
+│ │ │ │ │
+
+│ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
+
+│ │ │ └────── Monat (1-12)
+
+│ │ └──────── Tag (1-31)
+
+│ └────────── Stunde (0-23)
+
+└──────────── Minute (0-59)
