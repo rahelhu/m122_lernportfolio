@@ -52,6 +52,8 @@ wc: zählt Wörter oder Linien eines Datei-Inhaltes
 
 echo: gibt Zeichenkette aus
 
+sort: Mit dem Befehl sort lassen sich Dateien zeilenweise sortieren. (-u = unique = Sortierung ohne doppelte Zeilen)
+
 ## Aliase
 alias: nutzerspezifisches Kürzel für einen Befehl oder eine Befehlskombination
 
